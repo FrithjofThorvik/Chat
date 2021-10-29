@@ -7,6 +7,6 @@ export const getBackendUrl = (endpoint: string): string => {
 	const url =
 		!process.env.NODE_ENV || process.env.NODE_ENV === "development"
 			? `http://localhost:3001${endpoint}`
-			: `https://fullstack-template-frithjof.herokuapp.com${endpoint}`;
+			: `https://chat-frithjof.herokuapp.com${endpoint}`;
 	return url;
 };

@@ -1,6 +1,6 @@
 {
-	"short_name": "Fullstack Template",
-	"name": "Create a React Fullstack App",
+	"short_name": "Chat",
+	"name": "Chat App",
 	"icons": [
 		{
 			"src": "favicon.ico",

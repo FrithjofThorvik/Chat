@@ -7,11 +7,11 @@ export const CreateOrUpdateUser = async (
 	res: Response
 ): Promise<any> => {
 	try {
-		const { name, email } = req.body; // Fetch name & email from post request
+		const username = req.body.username; // Fetch name & email from post request
 
 		// Check if id is of valid type
-		if (typeof name === "string" && typeof email === "string") {
-			const user = await createOrUpdateUser(name, email);
+		if (typeof username === "string") {
+			const user = await createOrUpdateUser(username);
 
 			// Check if user was cerated/updated successfullt
 			if (user) {

@@ -8,9 +8,7 @@ import UserService from "../services/userService";
 
 import "../scss/components/UserForm.scss";
 
-interface IUserFormProps {}
-
-const UserForm: FC<IUserFormProps> = (): JSX.Element => {
+const UserForm: FC = (): JSX.Element => {
 	const [userState, setUserState] = useState<IUser>(initialUserState);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const dispatch = useStoreDispatch();
@@ -24,8 +22,7 @@ const UserForm: FC<IUserFormProps> = (): JSX.Element => {
 
 		// Create or update user
 		const user: IUser | null = await UserService.createOrUpdateUser(
-			userState.name,
-			userState.email
+			userState.username
 		);
 
 		// Check if user was created/updated successfully
@@ -42,11 +39,9 @@ const UserForm: FC<IUserFormProps> = (): JSX.Element => {
 		<div className="userForm">
 			<input
 				type="text"
-				onChange={(e) => setUserState({ ...userState, name: e.target.value })}
-			/>
-			<input
-				type="text"
-				onChange={(e) => setUserState({ ...userState, email: e.target.value })}
+				onChange={(e) =>
+					setUserState({ ...userState, username: e.target.value })
+				}
 			/>
 			<button onClick={createUser}>
 				{!isLoading ? "Create User" : "Loading..."}

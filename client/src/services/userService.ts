@@ -8,13 +8,11 @@ class Service {
 	 * @returns user instance
 	 */
 	public createOrUpdateUser = async (
-		name: string,
-		email: string
+		username: string
 	): Promise<IUser | null> => {
 		// Prepare payload
 		const payload = {
-			name: name,
-			email: email,
+			username: username,
 		};
 
 		// Make api request
@@ -25,8 +23,7 @@ class Service {
 			// Create user instance from response
 			const user: IUser = {
 				id: response.data.user.id,
-				name: response.data.user.name,
-				email: response.data.user.email,
+				username: response.data.user.username,
 			};
 
 			// Return user

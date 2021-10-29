@@ -13,9 +13,8 @@ const User: FC<IUserProps> = (): JSX.Element => {
 
 	return (
 		<div className="user">
-			<h3>{user.name}</h3>
+			<h3>{user.username}</h3>
 			<p>{user.id}</p>
-			<p>{user.email}</p>
 		</div>
 	);
 };
