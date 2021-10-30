@@ -3,7 +3,7 @@ import io, { Socket } from "socket.io-client";
 import SendIcon from "@mui/icons-material/Send";
 
 import { IMessage } from "../types/interfaces";
-import { getMessageTime } from "../helpers/functions";
+import { getBackendUrl, getMessageTime } from "../helpers/functions";
 
 import "../scss/components/Chat.scss";
 
@@ -17,7 +17,7 @@ const Chat: FC<IChatProps> = ({ room, username }): JSX.Element => {
 	const [messages, setMessages] = useState<IMessage[]>([]);
 	const [message, setMessage] = useState<string>("");
 	const messagesRef = useRef<any>(null);
-	const CONNECTION_PORT = "localhost:3001/";
+	const CONNECTION_PORT = getBackendUrl("/");
 
 	/**
 	 * Sends current message, author, and time
