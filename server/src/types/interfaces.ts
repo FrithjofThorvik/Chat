@@ -3,3 +3,9 @@ export interface IAuthHeader {
 		Authorization: string;
 	};
 }
+
+export interface IMessage {
+	text: string;
+	author: string;
+	time: string;
+}

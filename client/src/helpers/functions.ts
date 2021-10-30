@@ -10,3 +10,9 @@ export const getBackendUrl = (endpoint: string): string => {
 			: `https://chat-frithjof.herokuapp.com${endpoint}`;
 	return url;
 };
+
+export const getMessageTime = (): string => {
+	const date = new Date();
+	const time = date.toLocaleTimeString();
+	return time.slice(0, 5);
+};

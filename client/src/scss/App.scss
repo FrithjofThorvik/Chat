@@ -5,11 +5,25 @@
 	margin: 0;
 	padding: 0;
 	font-family: "Poppins", sans-serif;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+html {
+	overflow: hidden;
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	overflow: auto;
 }
 
 .app {
 	color: $white;
-	background-color: $dark;
+	background-color: $darkBlue;
 
 	.app-content {
 		height: 100vh;
