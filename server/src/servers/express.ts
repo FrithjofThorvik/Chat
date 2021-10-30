@@ -23,17 +23,13 @@ export const runExpress = (
 	// Add express routes
 	app.use("/api/user", UserRouter); // User route
 	app.get("/*", (req, res) => {
-		res.sendFile(path.join(__dirname, "../../../client/build", "index.html"));
+		res.sendFile(path.join(__dirname, "../../build", "index.html"));
 	});
 
 	db.sequelize
 		.sync()
 		.then(() => {
 			httpServer.listen(PORT, (): void => {
-				console.log(path.join(__dirname, "../../build", "index.html"));
-				console.log(
-					path.join(__dirname, "../../../client/build", "index.html")
-				);
 				console.log(`Server running on port ${PORT}...`);
 			});
 		})
