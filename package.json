@@ -9,7 +9,7 @@
 	"scripts": {
 		"start:server": "npm start --prefix server",
 		"start:client": "npm start --prefix client",
-		"web": "cd frontend && npm i && npm run build && npm start",
+		"web": "cd client && npm i && npm run build && npm start",
 		"server": "cd server && npm i && npm start",
 		"deploy": "cp -a client/build/. public/",
 		"buildncopy": "cd client && npm i && npm run build && (cp -r build ../server/)",
