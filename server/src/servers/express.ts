@@ -22,9 +22,12 @@ export const runExpress = (
 
 	// Add express routes
 	app.use("/api/user", UserRouter); // User route
-	app.get("/*", (req, res) => {
-		res.sendFile(path.join(__dirname, "../../build", "index.html"));
-	});
+	// app.get("/*", (req, res) => {
+	// 	res.sendFile(path.join(__dirname, "../../build", "index.html"));
+	// });
+	console.log(path.join(__dirname, "index.html"));
+	console.log(path.join(__dirname, "../build", "index.html"));
+	console.log(path.join(__dirname, "../../build", "index.html"));
 
 	db.sequelize
 		.sync()
