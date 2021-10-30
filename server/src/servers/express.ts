@@ -13,7 +13,7 @@ export const runExpress = (
 ) => {
 	// Configure express
 	app.use(express.json()); // Enable json format
-	app.use(express.static(path.join(__dirname, "../build")));
+	app.use(express.static(path.join(__dirname, "../../build")));
 	app.use(
 		cors({
 			origin: ["http://localhost:3000", "https://chat-frithjof.herokuapp.com"],
