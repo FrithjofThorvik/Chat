@@ -16,7 +16,7 @@ export const runExpress = (
 	app.use(express.static(path.join(__dirname, "../build")));
 	app.use(
 		cors({
-			origin: ["http://localhost:3000", "http://chat-frithjof.herokuapp.com"],
+			origin: ["http://localhost:3000", "https://chat-frithjof.herokuapp.com"],
 		})
 	);
 
